@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "minecraft:mangrove_boat"},
+    {"tag": "minecraft:beds"}
+  ],
+  "result": {"id": "boats:mangrove_bed_boat"}
+}

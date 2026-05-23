@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "minecraft:oak_boat"},
+    {"item": "minecraft:ender_chest"}
+  ],
+  "result": {"id": "boats:oak_ender_chest_boat"}
+}

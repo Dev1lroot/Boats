@@ -5,7 +5,6 @@
 
 package com.dev1lroot.mcmods.boats.entity;
 
-import com.dev1lroot.mcmods.boats.init.ModItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -16,15 +15,18 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.boat.Boat;
 import net.minecraft.world.inventory.ChestMenu;
 import net.minecraft.world.inventory.PlayerEnderChestContainer;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+
+import java.util.function.Supplier;
 
 public class EnderChestBoatEntity extends Boat implements HasCustomInventoryScreen {
 
     private static final Component DISPLAY_NAME = Component.translatable("container.enderchest");
 
-    public EnderChestBoatEntity(EntityType<? extends EnderChestBoatEntity> type, Level level) {
-        super(type, level, () -> ModItems.ENDER_CHEST_BOAT.get());
+    public EnderChestBoatEntity(EntityType<? extends EnderChestBoatEntity> type, Level level, Supplier<Item> boatItem) {
+        super(type, level, boatItem);
     }
 
     @Override

@@ -5,7 +5,6 @@
 
 package com.dev1lroot.mcmods.boats.entity;
 
-import com.dev1lroot.mcmods.boats.init.ModItems;
 import com.dev1lroot.mcmods.boats.menu.FurnaceBoatMenu;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
@@ -25,8 +24,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.boat.Boat;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemStackTemplate;
+
+import java.util.function.Supplier;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
@@ -85,8 +87,8 @@ public class FurnaceBoatEntity extends Boat implements Container, MenuProvider, 
         }
     };
 
-    public FurnaceBoatEntity(EntityType<? extends FurnaceBoatEntity> type, Level level) {
-        super(type, level, () -> ModItems.FURNACE_BOAT.get());
+    public FurnaceBoatEntity(EntityType<? extends FurnaceBoatEntity> type, Level level, Supplier<Item> boatItem) {
+        super(type, level, boatItem);
     }
 
     @Override

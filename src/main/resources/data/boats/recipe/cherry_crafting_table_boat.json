@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "minecraft:cherry_boat"},
+    {"item": "minecraft:crafting_table"}
+  ],
+  "result": {"id": "boats:cherry_crafting_table_boat"}
+}

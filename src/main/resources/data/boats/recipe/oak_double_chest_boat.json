@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["C", "C", "B"],
+  "key": {
+    "C": {"item": "minecraft:chest"},
+    "B": {"item": "minecraft:oak_boat"}
+  },
+  "result": {"id": "boats:oak_double_chest_boat"}
+}

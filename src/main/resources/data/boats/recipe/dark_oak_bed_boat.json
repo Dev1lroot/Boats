@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "minecraft:dark_oak_boat"},
+    {"tag": "minecraft:beds"}
+  ],
+  "result": {"id": "boats:dark_oak_bed_boat"}
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "boats:item/bamboo_double_chest_boat"
+  }
+}

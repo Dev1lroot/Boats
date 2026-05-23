@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": ["C", "C", "B"],
+  "key": {
+    "C": {"item": "minecraft:chest"},
+    "B": {"item": "minecraft:bamboo_raft"}
+  },
+  "result": {"id": "boats:bamboo_double_chest_boat"}
+}

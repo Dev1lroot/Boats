@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "minecraft:jungle_boat"},
+    {"tag": "minecraft:beds"}
+  ],
+  "result": {"id": "boats:jungle_bed_boat"}
+}

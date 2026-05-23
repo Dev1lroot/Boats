@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "boats:item/dark_oak_crafting_table_boat"
+  }
+}

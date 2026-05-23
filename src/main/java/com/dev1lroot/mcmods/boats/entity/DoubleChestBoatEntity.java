@@ -5,7 +5,6 @@
 
 package com.dev1lroot.mcmods.boats.entity;
 
-import com.dev1lroot.mcmods.boats.init.ModItems;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Container;
@@ -21,8 +20,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.boat.Boat;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ChestMenu;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+
+import java.util.function.Supplier;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.Vec3;
@@ -35,8 +37,8 @@ public class DoubleChestBoatEntity extends Boat implements Container, MenuProvid
 
     private NonNullList<ItemStack> items = NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY);
 
-    public DoubleChestBoatEntity(EntityType<? extends DoubleChestBoatEntity> type, Level level) {
-        super(type, level, () -> ModItems.DOUBLE_CHEST_BOAT.get());
+    public DoubleChestBoatEntity(EntityType<? extends DoubleChestBoatEntity> type, Level level, Supplier<Item> boatItem) {
+        super(type, level, boatItem);
     }
 
     @Override

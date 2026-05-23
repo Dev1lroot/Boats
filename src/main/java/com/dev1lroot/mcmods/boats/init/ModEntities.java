@@ -12,51 +12,61 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class ModEntities {
+
+    public static final String[] WOOD_IDS = {
+        "oak", "spruce", "birch", "jungle", "acacia",
+        "dark_oak", "mangrove", "cherry", "bamboo", "pale_oak"
+    };
 
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES =
         DeferredRegister.create(Registries.ENTITY_TYPE, Boats.MODID);
 
-    public static final DeferredHolder<EntityType<?>, EntityType<CraftingTableBoatEntity>> CRAFTING_TABLE_BOAT =
-        ENTITY_TYPES.register("crafting_table_boat", () ->
-            EntityType.Builder.<CraftingTableBoatEntity>of(CraftingTableBoatEntity::new, MobCategory.MISC)
-                .sized(1.375f, 0.5625f)
-                .eyeHeight(0.5625f)
-                .build(ResourceKey.create(Registries.ENTITY_TYPE,
-                    Identifier.fromNamespaceAndPath(Boats.MODID, "crafting_table_boat"))));
+    public static final Map<String, DeferredHolder<EntityType<?>, EntityType<CraftingTableBoatEntity>>> CRAFTING_TABLE_BOATS = new LinkedHashMap<>();
+    public static final Map<String, DeferredHolder<EntityType<?>, EntityType<EnderChestBoatEntity>>>   ENDER_CHEST_BOATS   = new LinkedHashMap<>();
+    public static final Map<String, DeferredHolder<EntityType<?>, EntityType<FurnaceBoatEntity>>>      FURNACE_BOATS        = new LinkedHashMap<>();
+    public static final Map<String, DeferredHolder<EntityType<?>, EntityType<DoubleChestBoatEntity>>>  DOUBLE_CHEST_BOATS   = new LinkedHashMap<>();
+    public static final Map<String, DeferredHolder<EntityType<?>, EntityType<BedBoatEntity>>>          BED_BOATS            = new LinkedHashMap<>();
 
-    public static final DeferredHolder<EntityType<?>, EntityType<EnderChestBoatEntity>> ENDER_CHEST_BOAT =
-        ENTITY_TYPES.register("ender_chest_boat", () ->
-            EntityType.Builder.<EnderChestBoatEntity>of(EnderChestBoatEntity::new, MobCategory.MISC)
-                .sized(1.375f, 0.5625f)
-                .eyeHeight(0.5625f)
-                .build(ResourceKey.create(Registries.ENTITY_TYPE,
-                    Identifier.fromNamespaceAndPath(Boats.MODID, "ender_chest_boat"))));
+    static {
+        for (String wood : WOOD_IDS) {
+            register(wood);
+        }
+    }
 
-    public static final DeferredHolder<EntityType<?>, EntityType<FurnaceBoatEntity>> FURNACE_BOAT =
-        ENTITY_TYPES.register("furnace_boat", () ->
-            EntityType.Builder.<FurnaceBoatEntity>of(FurnaceBoatEntity::new, MobCategory.MISC)
-                .sized(1.375f, 0.5625f)
-                .eyeHeight(0.5625f)
-                .build(ResourceKey.create(Registries.ENTITY_TYPE,
-                    Identifier.fromNamespaceAndPath(Boats.MODID, "furnace_boat"))));
+    private static void register(String wood) {
+        CRAFTING_TABLE_BOATS.put(wood, entity(wood + "_crafting_table_boat",
+            (type, level) -> new CraftingTableBoatEntity(type, level,
+                () -> ModItems.CRAFTING_TABLE_BOAT_ITEMS.get(wood).get())));
+        ENDER_CHEST_BOATS.put(wood, entity(wood + "_ender_chest_boat",
+            (type, level) -> new EnderChestBoatEntity(type, level,
+                () -> ModItems.ENDER_CHEST_BOAT_ITEMS.get(wood).get())));
+        FURNACE_BOATS.put(wood, entity(wood + "_furnace_boat",
+            (type, level) -> new FurnaceBoatEntity(type, level,
+                () -> ModItems.FURNACE_BOAT_ITEMS.get(wood).get())));
+        DOUBLE_CHEST_BOATS.put(wood, entity(wood + "_double_chest_boat",
+            (type, level) -> new DoubleChestBoatEntity(type, level,
+                () -> ModItems.DOUBLE_CHEST_BOAT_ITEMS.get(wood).get())));
+        BED_BOATS.put(wood, entity(wood + "_bed_boat",
+            (type, level) -> new BedBoatEntity(type, level,
+                () -> ModItems.BED_BOAT_ITEMS.get(wood).get())));
+    }
 
-    public static final DeferredHolder<EntityType<?>, EntityType<DoubleChestBoatEntity>> DOUBLE_CHEST_BOAT =
-        ENTITY_TYPES.register("double_chest_boat", () ->
-            EntityType.Builder.<DoubleChestBoatEntity>of(DoubleChestBoatEntity::new, MobCategory.MISC)
+    @SuppressWarnings("unchecked")
+    private static <T extends AbstractBoat> DeferredHolder<EntityType<?>, EntityType<T>> entity(
+            String id, EntityType.EntityFactory<T> factory) {
+        return (DeferredHolder<EntityType<?>, EntityType<T>>) (Object) ENTITY_TYPES.register(id, () ->
+            EntityType.Builder.of(factory, MobCategory.MISC)
                 .sized(1.375f, 0.5625f)
                 .eyeHeight(0.5625f)
                 .build(ResourceKey.create(Registries.ENTITY_TYPE,
-                    Identifier.fromNamespaceAndPath(Boats.MODID, "double_chest_boat"))));
-
-    public static final DeferredHolder<EntityType<?>, EntityType<BedBoatEntity>> BED_BOAT =
-        ENTITY_TYPES.register("bed_boat", () ->
-            EntityType.Builder.<BedBoatEntity>of(BedBoatEntity::new, MobCategory.MISC)
-                .sized(1.375f, 0.5625f)
-                .eyeHeight(0.5625f)
-                .build(ResourceKey.create(Registries.ENTITY_TYPE,
-                    Identifier.fromNamespaceAndPath(Boats.MODID, "bed_boat"))));
+                    Identifier.fromNamespaceAndPath(Boats.MODID, id))));
+    }
 }

@@ -10,8 +10,10 @@ import com.dev1lroot.mcmods.boats.client.renderer.FunctionalBoatRenderer.BlockEn
 import com.dev1lroot.mcmods.boats.client.screen.FurnaceBoatScreen;
 import com.dev1lroot.mcmods.boats.init.ModEntities;
 import com.dev1lroot.mcmods.boats.init.ModMenuTypes;
+import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.core.Direction;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.boat.AbstractBoat;
 import net.minecraft.world.level.block.BedBlock;
 import net.minecraft.world.level.block.Blocks;
@@ -25,8 +27,23 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 
+import java.util.Map;
+
 @Mod(value = Boats.MODID, dist = Dist.CLIENT)
 public class BoatsClient {
+
+    private static final Map<String, ModelLayerLocation> BOAT_LAYERS = Map.ofEntries(
+        Map.entry("oak",      ModelLayers.OAK_BOAT),
+        Map.entry("spruce",   ModelLayers.SPRUCE_BOAT),
+        Map.entry("birch",    ModelLayers.BIRCH_BOAT),
+        Map.entry("jungle",   ModelLayers.JUNGLE_BOAT),
+        Map.entry("acacia",   ModelLayers.ACACIA_BOAT),
+        Map.entry("dark_oak", ModelLayers.DARK_OAK_BOAT),
+        Map.entry("mangrove", ModelLayers.MANGROVE_BOAT),
+        Map.entry("cherry",   ModelLayers.CHERRY_BOAT),
+        Map.entry("bamboo",   ModelLayers.BAMBOO_RAFT),
+        Map.entry("pale_oak", ModelLayers.PALE_OAK_BOAT)
+    );
 
     public BoatsClient(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::onRegisterMenuScreens);
@@ -37,49 +54,36 @@ public class BoatsClient {
         event.register(ModMenuTypes.FURNACE_BOAT_MENU.get(), FurnaceBoatScreen::new);
     }
 
-    @SuppressWarnings("unchecked")
     private void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        // Single-block boats: block shifted slightly toward stern (Z+) so it sits more centred in the hull
-        event.registerEntityRenderer(
-            (net.minecraft.world.entity.EntityType<AbstractBoat>)(net.minecraft.world.entity.EntityType<?>)
-                ModEntities.CRAFTING_TABLE_BOAT.get(),
-            ctx -> new FunctionalBoatRenderer(ctx, ModelLayers.OAK_BOAT,
-                new BlockEntry(Blocks.CRAFTING_TABLE.defaultBlockState(), 0f, 0f, 0.60f))
-        );
-        event.registerEntityRenderer(
-            (net.minecraft.world.entity.EntityType<AbstractBoat>)(net.minecraft.world.entity.EntityType<?>)
-                ModEntities.ENDER_CHEST_BOAT.get(),
-            ctx -> new FunctionalBoatRenderer(ctx, ModelLayers.OAK_BOAT,
-                new BlockEntry(Blocks.ENDER_CHEST.defaultBlockState(), 0f, 0f, 0.60f))
-        );
-        event.registerEntityRenderer(
-            (net.minecraft.world.entity.EntityType<AbstractBoat>)(net.minecraft.world.entity.EntityType<?>)
-                ModEntities.FURNACE_BOAT.get(),
-            ctx -> new FunctionalBoatRenderer(ctx, ModelLayers.OAK_BOAT,
-                new BlockEntry(Blocks.FURNACE.defaultBlockState(), 0f, 0f, 0.60f))
-        );
-        // Double chest: two half-chest models (TYPE=RIGHT at bow, TYPE=LEFT at stern) form a connected double chest.
-        // FACING=EAST so the chest opens to the side and the halves align along the boat's Z axis.
-        event.registerEntityRenderer(
-            (net.minecraft.world.entity.EntityType<AbstractBoat>)(net.minecraft.world.entity.EntityType<?>)
-                ModEntities.DOUBLE_CHEST_BOAT.get(),
-            ctx -> new FunctionalBoatRenderer(ctx, ModelLayers.OAK_BOAT,
+        for (String wood : ModEntities.WOOD_IDS) {
+            ModelLayerLocation layer = BOAT_LAYERS.get(wood);
+            registerBoat(event, ModEntities.CRAFTING_TABLE_BOATS.get(wood).get(), layer,
+                new BlockEntry(Blocks.CRAFTING_TABLE.defaultBlockState(), 0f, 0f, 0.60f));
+            registerBoat(event, ModEntities.ENDER_CHEST_BOATS.get(wood).get(), layer,
+                new BlockEntry(Blocks.ENDER_CHEST.defaultBlockState(), 0f, 0f, 0.60f));
+            registerBoat(event, ModEntities.FURNACE_BOATS.get(wood).get(), layer,
+                new BlockEntry(Blocks.FURNACE.defaultBlockState(), 0f, 0f, 0.60f));
+            registerBoat(event, ModEntities.DOUBLE_CHEST_BOATS.get(wood).get(), layer,
                 new BlockEntry(Blocks.CHEST.defaultBlockState()
                     .setValue(ChestBlock.FACING, Direction.EAST)
                     .setValue(ChestBlock.TYPE, ChestType.LEFT), 0f, 0f, -0.5f),
                 new BlockEntry(Blocks.CHEST.defaultBlockState()
                     .setValue(ChestBlock.FACING, Direction.EAST)
-                    .setValue(ChestBlock.TYPE, ChestType.RIGHT), 0f, 0f,  0.5f))
-        );
-        // Bed: HEAD at bow (Z-), FOOT at stern (Z+); FACING=NORTH so both parts share orientation.
-        event.registerEntityRenderer(
-            (net.minecraft.world.entity.EntityType<AbstractBoat>)(net.minecraft.world.entity.EntityType<?>)
-                ModEntities.BED_BOAT.get(),
-            ctx -> new FunctionalBoatRenderer(ctx, ModelLayers.OAK_BOAT,
+                    .setValue(ChestBlock.TYPE, ChestType.RIGHT), 0f, 0f, 0.5f));
+            registerBoat(event, ModEntities.BED_BOATS.get(wood).get(), layer,
                 new BlockEntry(Blocks.RED_BED.defaultBlockState()
                     .setValue(BedBlock.PART, BedPart.HEAD), 0f, 0f, -0.5f),
                 new BlockEntry(Blocks.RED_BED.defaultBlockState()
-                    .setValue(BedBlock.PART, BedPart.FOOT), 0f, 0f,  0.5f))
+                    .setValue(BedBlock.PART, BedPart.FOOT), 0f, 0f, 0.5f));
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private static void registerBoat(EntityRenderersEvent.RegisterRenderers event,
+            EntityType<?> type, ModelLayerLocation layer, BlockEntry... entries) {
+        event.registerEntityRenderer(
+            (EntityType<AbstractBoat>) type,
+            ctx -> new FunctionalBoatRenderer(ctx, layer, entries)
         );
     }
 }

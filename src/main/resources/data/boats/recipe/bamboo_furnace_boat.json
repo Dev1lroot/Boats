@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {"item": "minecraft:bamboo_raft"},
+    {"item": "minecraft:furnace"}
+  ],
+  "result": {"id": "boats:bamboo_furnace_boat"}
+}

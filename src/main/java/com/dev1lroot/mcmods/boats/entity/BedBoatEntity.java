@@ -5,7 +5,6 @@
 
 package com.dev1lroot.mcmods.boats.entity;
 
-import com.dev1lroot.mcmods.boats.init.ModItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
@@ -17,13 +16,16 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.boat.Boat;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
+
+import java.util.function.Supplier;
 import net.minecraft.world.phys.Vec3;
 
 public class BedBoatEntity extends Boat {
 
-    public BedBoatEntity(EntityType<? extends BedBoatEntity> type, Level level) {
-        super(type, level, () -> ModItems.BED_BOAT.get());
+    public BedBoatEntity(EntityType<? extends BedBoatEntity> type, Level level, Supplier<Item> boatItem) {
+        super(type, level, boatItem);
     }
 
     @Override
