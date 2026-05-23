@@ -97,6 +97,16 @@ public class FurnaceBoatEntity extends Boat implements Container, MenuProvider, 
     }
 
     @Override
+    protected int getMaxPassengers() {
+        return 1;
+    }
+
+    @Override
+    protected float getSinglePassengerXOffset() {
+        return 0.15f;
+    }
+
+    @Override
     protected void defineSynchedData(SynchedEntityData.Builder builder) {
         super.defineSynchedData(builder);
         builder.define(DATA_LIT, false);

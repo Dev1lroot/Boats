@@ -30,6 +30,16 @@ public class EnderChestBoatEntity extends Boat implements HasCustomInventoryScre
     }
 
     @Override
+    protected int getMaxPassengers() {
+        return 1;
+    }
+
+    @Override
+    protected float getSinglePassengerXOffset() {
+        return 0.15f;
+    }
+
+    @Override
     public InteractionResult interact(Player player, InteractionHand hand, Vec3 hitVec) {
         InteractionResult superResult = super.interact(player, hand, hitVec);
         if (superResult != InteractionResult.PASS) {

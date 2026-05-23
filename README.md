@@ -1,9 +1,9 @@
-# Boats Mod
+# Better than Boats
 
 [![Minecraft Version](https://img.shields.io/badge/Minecraft-26.1.2-darkgreen.svg?logo=minecraft)](https://minecraft.net)
 [![NeoForge Version](https://img.shields.io/badge/NeoForge-26.1.2.64--beta-orange.svg)](https://neoforged.net)
 [![License](https://img.shields.io/badge/License-GNU%20GPL%203.0--Only-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
-[![Mod Version](https://img.shields.io/badge/Version-0.0.3-purple.svg)](https://semver.org/)
+[![Mod Version](https://img.shields.io/badge/Version-1.0.0-purple.svg)](https://semver.org/)
 
 A Minecraft mod that introduces 5 new boat variants, allowing you to transform the open water into your permanent, mobile base. Built for **NeoForge**, this mod lets you assemble a fully equipped water caravan. Seamlessly transport massive amounts of cargo and craft on the go during long-distance journeys, completely eliminating the need to ever drop anchor or build on land.
 
@@ -18,6 +18,10 @@ This mod adds the following functional boat variants to the game:
 3. **Boat with Double Chest:** Offers massive inventory space for long-distance resource transport. *Note: This boat is not ridable, but you can link it to your other boats using a Lead.*
 4. **Boat with Bed:** Allows you to sleep on the water or set spawn points during long voyages. *Note: This boat is not ridable, but you can link it to your other boats using a Lead.*
 5. **Boat with Ender Chest:** Access your global Ender inventory securely from anywhere in the world.
+
+## Mixins
+
+This mod introduces only a single mixin targeting the bed boat mechanic, disabling block-checking functionality exclusively for boats with beds. Standard beds retain their default behavior.
 
 ## Installation
 

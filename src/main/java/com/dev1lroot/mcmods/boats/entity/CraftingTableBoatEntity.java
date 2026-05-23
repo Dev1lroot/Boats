@@ -30,6 +30,16 @@ public class CraftingTableBoatEntity extends Boat implements HasCustomInventoryS
     }
 
     @Override
+    protected int getMaxPassengers() {
+        return 1;
+    }
+
+    @Override
+    protected float getSinglePassengerXOffset() {
+        return 0.15f;
+    }
+
+    @Override
     public InteractionResult interact(Player player, InteractionHand hand, Vec3 hitVec) {
         // Let leashing and other priority interactions (Entity.interact) pass through first,
         // then let AbstractBoat handle mounting when not sneaking.
