@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {"item": "minecraft:acacia_boat"},
-    {"tag": "minecraft:beds"}
+    "minecraft:acacia_boat",
+    "#minecraft:beds"
   ],
   "result": {"id": "boats:acacia_bed_boat"}
 }

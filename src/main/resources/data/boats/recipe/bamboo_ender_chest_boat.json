@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {"item": "minecraft:bamboo_raft"},
-    {"item": "minecraft:ender_chest"}
+    "minecraft:bamboo_raft",
+    "minecraft:ender_chest"
   ],
   "result": {"id": "boats:bamboo_ender_chest_boat"}
 }

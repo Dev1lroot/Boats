@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {"item": "minecraft:dark_oak_boat"},
-    {"item": "minecraft:crafting_table"}
+    "minecraft:dark_oak_boat",
+    "minecraft:crafting_table"
   ],
   "result": {"id": "boats:dark_oak_crafting_table_boat"}
 }

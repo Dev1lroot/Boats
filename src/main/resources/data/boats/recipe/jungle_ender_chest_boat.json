@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {"item": "minecraft:jungle_boat"},
-    {"item": "minecraft:ender_chest"}
+    "minecraft:jungle_boat",
+    "minecraft:ender_chest"
   ],
   "result": {"id": "boats:jungle_ender_chest_boat"}
 }

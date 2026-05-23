@@ -2,8 +2,8 @@
   "type": "minecraft:crafting_shaped",
   "pattern": ["C", "C", "B"],
   "key": {
-    "C": {"item": "minecraft:chest"},
-    "B": {"item": "minecraft:mangrove_boat"}
+    "C": "minecraft:chest",
+    "B": "minecraft:mangrove_boat"
   },
   "result": {"id": "boats:mangrove_double_chest_boat"}
 }

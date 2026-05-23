@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {"item": "minecraft:cherry_boat"},
-    {"item": "minecraft:furnace"}
+    "minecraft:cherry_boat",
+    "minecraft:furnace"
   ],
   "result": {"id": "boats:cherry_furnace_boat"}
 }

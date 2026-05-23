@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {"item": "minecraft:mangrove_boat"},
-    {"item": "minecraft:crafting_table"}
+    "minecraft:mangrove_boat",
+    "minecraft:crafting_table"
   ],
   "result": {"id": "boats:mangrove_crafting_table_boat"}
 }

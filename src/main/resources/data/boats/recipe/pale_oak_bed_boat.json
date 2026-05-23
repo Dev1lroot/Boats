@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {"item": "minecraft:pale_oak_boat"},
-    {"tag": "minecraft:beds"}
+    "minecraft:pale_oak_boat",
+    "#minecraft:beds"
   ],
   "result": {"id": "boats:pale_oak_bed_boat"}
 }
