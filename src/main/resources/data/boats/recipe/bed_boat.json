@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "tag": "minecraft:boats" },
+    { "tag": "minecraft:beds" }
+  ],
+  "result": {
+    "id": "boats:bed_boat"
+  }
+}

@@ -1,5 +1,12 @@
 {
-  "boats.configuration.title": "Boats Configs",
-  "boats.configuration.section.boats.common.toml": "Boats Configs",
-  "boats.configuration.section.boats.common.toml.title": "Boats Configs"
+  "itemGroup.boats": "Boats",
+
+  "item.boats.crafting_table_boat": "Boat with Crafting Table",
+  "item.boats.ender_chest_boat": "Boat with Ender Chest",
+  "item.boats.furnace_boat": "Boat with Furnace",
+  "item.boats.double_chest_boat": "Boat with Double Chest",
+  "item.boats.bed_boat": "Boat with Bed",
+
+  "container.boats.furnace_boat": "Boat Furnace",
+  "container.boats.double_chest_boat": "Boat Double Chest"
 }

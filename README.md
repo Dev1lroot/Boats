@@ -20,14 +20,6 @@ This mod adds the following functional boat variants to the game:
 4. **Boat with Bed:** Allows you to sleep on the water or set spawn points during long voyages. *Note: This boat is not ridable, but you can link it to your other boats using a Lead.*
 5. **Boat with Ender Chest:** Access your global Ender inventory securely from anywhere in the world.
 
-## Requirements & Specifications
-
-* **Minecraft Version:** `26.1.2`
-* **Mod Loader:** NeoForge (`26.1.2.64-beta`)
-* **Mod ID:** `boats`
-* **Group ID:** `com.dev1lroot.mcmods.boats`
-* **Version:** `1.0.0`
-
 ## Installation
 
 1. Make sure you have the correct version of **NeoForge** installed.
