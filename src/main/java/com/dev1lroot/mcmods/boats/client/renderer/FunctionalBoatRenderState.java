@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.entity.state.BoatRenderState;
 
 public class FunctionalBoatRenderState extends BoatRenderState {
     public final BlockModelRenderState[] displayBlocks;
+    public boolean isLit;
 
     public FunctionalBoatRenderState(int count) {
         this.displayBlocks = new BlockModelRenderState[count];

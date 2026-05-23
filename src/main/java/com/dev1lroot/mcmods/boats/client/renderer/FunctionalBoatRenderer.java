@@ -23,9 +23,9 @@ public class FunctionalBoatRenderer extends BoatRenderer {
 
     public record BlockEntry(BlockState state, float dx, float dy, float dz) {}
 
-    private static final BlockDisplayContext DISPLAY_CONTEXT = BlockDisplayContext.create();
+    protected static final BlockDisplayContext DISPLAY_CONTEXT = BlockDisplayContext.create();
 
-    private final BlockModelResolver blockModelResolver;
+    protected final BlockModelResolver blockModelResolver;
     private final BlockEntry[] entries;
 
     public FunctionalBoatRenderer(EntityRendererProvider.Context context, ModelLayerLocation modelId, BlockEntry... entries) {

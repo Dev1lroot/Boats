@@ -7,6 +7,7 @@ package com.dev1lroot.mcmods.boats;
 
 import com.dev1lroot.mcmods.boats.client.renderer.FunctionalBoatRenderer;
 import com.dev1lroot.mcmods.boats.client.renderer.FunctionalBoatRenderer.BlockEntry;
+import com.dev1lroot.mcmods.boats.client.renderer.FurnaceBoatRenderer;
 import com.dev1lroot.mcmods.boats.client.screen.FurnaceBoatScreen;
 import com.dev1lroot.mcmods.boats.init.ModEntities;
 import com.dev1lroot.mcmods.boats.init.ModMenuTypes;
@@ -61,8 +62,7 @@ public class BoatsClient {
                 new BlockEntry(Blocks.CRAFTING_TABLE.defaultBlockState(), 0f, 0f, 0.60f));
             registerBoat(event, ModEntities.ENDER_CHEST_BOATS.get(wood).get(), layer,
                 new BlockEntry(Blocks.ENDER_CHEST.defaultBlockState(), 0f, 0f, 0.60f));
-            registerBoat(event, ModEntities.FURNACE_BOATS.get(wood).get(), layer,
-                new BlockEntry(Blocks.FURNACE.defaultBlockState(), 0f, 0f, 0.60f));
+            registerFurnaceBoat(event, ModEntities.FURNACE_BOATS.get(wood).get(), layer);
             registerBoat(event, ModEntities.DOUBLE_CHEST_BOATS.get(wood).get(), layer,
                 new BlockEntry(Blocks.CHEST.defaultBlockState()
                     .setValue(ChestBlock.FACING, Direction.EAST)
@@ -84,6 +84,15 @@ public class BoatsClient {
         event.registerEntityRenderer(
             (EntityType<AbstractBoat>) type,
             ctx -> new FunctionalBoatRenderer(ctx, layer, entries)
+        );
+    }
+
+    @SuppressWarnings("unchecked")
+    private static void registerFurnaceBoat(EntityRenderersEvent.RegisterRenderers event,
+            EntityType<?> type, ModelLayerLocation layer) {
+        event.registerEntityRenderer(
+            (EntityType<AbstractBoat>) type,
+            ctx -> new FurnaceBoatRenderer(ctx, layer)
         );
     }
 }

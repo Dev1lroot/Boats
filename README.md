@@ -1,14 +1,13 @@
 # Boats Mod
 
-## W.I.P. (The mod isn't ready for the production, its a placeholder)
-
-
 [![Minecraft Version](https://img.shields.io/badge/Minecraft-26.1.2-darkgreen.svg?logo=minecraft)](https://minecraft.net)
 [![NeoForge Version](https://img.shields.io/badge/NeoForge-26.1.2.64--beta-orange.svg)](https://neoforged.net)
 [![License](https://img.shields.io/badge/License-GNU%20GPL%203.0--Only-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
-[![Mod Version](https://img.shields.io/badge/Version-0.0.2-purple.svg)](https://semver.org/)
+[![Mod Version](https://img.shields.io/badge/Version-0.0.3-purple.svg)](https://semver.org/)
 
-A Minecraft mod that introduces 5 new boat variants to enhance your baseless survival experience. Built for **NeoForge**, this mod allows you to take essential utility blocks out onto the open water with you.
+A Minecraft mod that introduces 5 new boat variants, allowing you to transform the open water into your permanent, mobile base. Built for **NeoForge**, this mod lets you assemble a fully equipped water caravan. Seamlessly transport massive amounts of cargo and craft on the go during long-distance journeys, completely eliminating the need to ever drop anchor or build on land.
+
+![All the boats](./screenshots/all_boats.png)
 
 ## Features
 

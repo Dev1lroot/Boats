@@ -8,6 +8,9 @@ package com.dev1lroot.mcmods.boats.entity;
 import com.dev1lroot.mcmods.boats.menu.FurnaceBoatMenu;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Container;
@@ -44,6 +47,8 @@ public class FurnaceBoatEntity extends Boat implements Container, MenuProvider, 
 
     private static final int CONTAINER_SIZE = 3;
     private static final Component DISPLAY_NAME = Component.translatable("container.boats.furnace_boat");
+    private static final EntityDataAccessor<Boolean> DATA_LIT =
+        SynchedEntityData.defineId(FurnaceBoatEntity.class, EntityDataSerializers.BOOLEAN);
 
     private NonNullList<ItemStack> items = NonNullList.withSize(CONTAINER_SIZE, ItemStack.EMPTY);
 
@@ -92,6 +97,16 @@ public class FurnaceBoatEntity extends Boat implements Container, MenuProvider, 
     }
 
     @Override
+    protected void defineSynchedData(SynchedEntityData.Builder builder) {
+        super.defineSynchedData(builder);
+        builder.define(DATA_LIT, false);
+    }
+
+    public boolean isLit() {
+        return entityData.get(DATA_LIT);
+    }
+
+    @Override
     public InteractionResult interact(Player player, InteractionHand hand, Vec3 hitVec) {
         InteractionResult superResult = super.interact(player, hand, hitVec);
         if (superResult != InteractionResult.PASS) {
@@ -125,6 +140,7 @@ public class FurnaceBoatEntity extends Boat implements Container, MenuProvider, 
         if (litTimeRemaining > 0) {
             litTimeRemaining--;
         }
+
 
         ItemStack fuel = items.get(1);
         ItemStack ingredient = items.get(0);
@@ -163,6 +179,11 @@ public class FurnaceBoatEntity extends Boat implements Container, MenuProvider, 
             }
         } else {
             cookingTimer = Mth.clamp(cookingTimer - 2, 0, cookingTotalTime);
+        }
+
+        boolean isNowLit = litTimeRemaining > 0;
+        if (wasLit != isNowLit) {
+            entityData.set(DATA_LIT, isNowLit);
         }
     }
 
