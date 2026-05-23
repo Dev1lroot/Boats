@@ -19,6 +19,7 @@ import net.minecraft.world.entity.vehicle.boat.Boat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 
+import java.util.List;
 import java.util.function.Supplier;
 import net.minecraft.world.phys.Vec3;
 
@@ -29,8 +30,26 @@ public class BedBoatEntity extends Boat {
     }
 
     @Override
+    public void tick() {
+        super.tick();
+        if (level().isClientSide()) return;
+        for (Entity passenger : List.copyOf(getPassengers())) {
+            if (passenger instanceof ServerPlayer sp) {
+                if (sp.isSleeping()) {
+                    // Keep the vanilla sleep-validity pos in sync with the moving boat.
+                    sp.setSleepingPos(this.blockPosition());
+                } else {
+                    passenger.stopRiding();
+                }
+            }
+        }
+    }
+
+    @Override
     protected boolean canAddPassenger(Entity passenger) {
-        return false;
+        // Only sleeping players may mount — prevents normal riding while still
+        // allowing the sleep mechanic to seat the player after startSleepInBed.
+        return passenger instanceof Player p && p.isSleeping();
     }
 
     @Override
@@ -88,6 +107,13 @@ public class BedBoatEntity extends Boat {
                 player.sendSystemMessage(problem.message());
             }
         });
+
+        if (result.right().isPresent()) {
+            // Mount the player so the boat doesn't drift and the sleeping pos stays valid.
+            // canAddPassenger allows this because the player is now sleeping.
+            // tick() will keep sleepingPos synced as the boat moves, and dismount on wake-up.
+            player.startRiding(this);
+        }
 
         return result.left().isPresent() ? InteractionResult.FAIL : InteractionResult.SUCCESS;
     }
