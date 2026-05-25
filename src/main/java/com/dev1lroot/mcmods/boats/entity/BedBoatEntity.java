@@ -6,7 +6,10 @@
 package com.dev1lroot.mcmods.boats.entity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.UUIDUtil;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.level.storage.ValueInput;
+import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
@@ -21,8 +24,10 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.storage.LevelData;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 import java.util.function.Supplier;
 import net.minecraft.world.phys.Vec3;
@@ -33,21 +38,41 @@ public class BedBoatEntity extends Boat {
 
     private static final Logger LOG = LoggerFactory.getLogger("boats/BedBoatEntity");
 
+    private final Set<UUID> linkedPlayers = new HashSet<>();
+    private int tickCounter = 0;
+
     public BedBoatEntity(EntityType<? extends BedBoatEntity> type, Level level, Supplier<Item> boatItem) {
         super(type, level, boatItem);
+    }
+
+    @Override
+    protected void addAdditionalSaveData(ValueOutput output) {
+        super.addAdditionalSaveData(output);
+        ValueOutput.TypedOutputList<UUID> list = output.list("linked_players", UUIDUtil.CODEC);
+        for (UUID uuid : linkedPlayers) {
+            list.add(uuid);
+        }
+    }
+
+    @Override
+    protected void readAdditionalSaveData(ValueInput input) {
+        super.readAdditionalSaveData(input);
+        linkedPlayers.clear();
+        for (UUID uuid : input.listOrEmpty("linked_players", UUIDUtil.CODEC)) {
+            linkedPlayers.add(uuid);
+        }
     }
 
     @Override
     public void tick() {
         super.tick();
         if (level().isClientSide()) return;
+
         for (Entity passenger : List.copyOf(getPassengers())) {
             if (passenger instanceof ServerPlayer sp) {
                 if (sp.isSleeping()) {
                     BlockPos boatPos = this.blockPosition();
-                    // Keep the vanilla sleep-validity pos in sync with the moving boat.
                     sp.setSleepingPos(boatPos);
-                    // Keep the respawn position in sync so it always tracks the boat.
                     ServerPlayer.RespawnConfig current = sp.getRespawnConfig();
                     if (current == null || !current.respawnData().pos().equals(boatPos)) {
                         sp.setRespawnPosition(
@@ -62,6 +87,28 @@ public class BedBoatEntity extends Boat {
                     passenger.stopRiding();
                 }
             }
+        }
+
+        // Every 10 ticks: push current position to all online players linked to this boat.
+        if (++tickCounter % 10 == 0) {
+            ServerLevel serverLevel = (ServerLevel) level();
+            BlockPos currentPos = this.blockPosition();
+            linkedPlayers.removeIf(playerUUID -> {
+                ServerPlayer sp = serverLevel.getServer().getPlayerList().getPlayer(playerUUID);
+                if (sp == null) return false; // offline — keep, can't update now
+                Optional<UUID> linked = sp.getData(com.dev1lroot.mcmods.boats.Boats.BED_BOAT_UUID.get());
+                if (linked.isEmpty() || !linked.get().equals(this.getUUID())) {
+                    return true; // player re-linked to a different boat — remove
+                }
+                sp.setRespawnPosition(
+                    new ServerPlayer.RespawnConfig(
+                        LevelData.RespawnData.of(serverLevel.dimension(), currentPos, sp.getYRot(), sp.getXRot()),
+                        false
+                    ),
+                    false
+                );
+                return false;
+            });
         }
     }
 
@@ -111,7 +158,8 @@ public class BedBoatEntity extends Boat {
         // Always set spawn on right-click (except in dimensions where beds explode).
         // Store the UUID so the respawn mixin can find this entity even if it drifts.
         serverPlayer.setData(com.dev1lroot.mcmods.boats.Boats.BED_BOAT_UUID.get(), Optional.of(this.getUUID()));
-        LOG.info("[BedBoat] Stored UUID {} for player {}", this.getUUID(), serverPlayer.getName().getString());
+        linkedPlayers.add(serverPlayer.getUUID());
+        LOG.info("[BedBoat] Stored UUID {} for player {}, linkedPlayers={}", this.getUUID(), serverPlayer.getName().getString(), linkedPlayers.size());
         serverPlayer.setRespawnPosition(
             new ServerPlayer.RespawnConfig(
                 LevelData.RespawnData.of(serverLevel.dimension(), this.blockPosition(), serverPlayer.getYRot(), serverPlayer.getXRot()),
