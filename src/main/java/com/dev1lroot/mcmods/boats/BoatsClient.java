@@ -55,7 +55,10 @@ public class BoatsClient {
         event.register(ModMenuTypes.FURNACE_BOAT_MENU.get(), FurnaceBoatScreen::new);
     }
 
-    private void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event) {
+    private void onRegisterRenderers(EntityRenderersEvent.RegisterRenderers event)
+    {
+        // TODO: Fix heigh for the rafts (they have different model)
+
         for (String wood : ModEntities.WOOD_IDS) {
             ModelLayerLocation layer = BOAT_LAYERS.get(wood);
             registerBoat(event, ModEntities.CRAFTING_TABLE_BOATS.get(wood).get(), layer,

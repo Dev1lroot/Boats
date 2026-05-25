@@ -5,6 +5,6 @@
 
 package com.dev1lroot.mcmods.boats;
 
-// Config placeholder - add mod configuration here as needed.
+// TODO: Add ability to enable/disable certain boats;
 public class Config {
 }

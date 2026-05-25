@@ -5,6 +5,7 @@
 
 package com.dev1lroot.mcmods.boats.entity;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
@@ -18,12 +19,19 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.boat.Boat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.storage.LevelData;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 import java.util.function.Supplier;
 import net.minecraft.world.phys.Vec3;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class BedBoatEntity extends Boat {
+
+    private static final Logger LOG = LoggerFactory.getLogger("boats/BedBoatEntity");
 
     public BedBoatEntity(EntityType<? extends BedBoatEntity> type, Level level, Supplier<Item> boatItem) {
         super(type, level, boatItem);
@@ -36,8 +44,20 @@ public class BedBoatEntity extends Boat {
         for (Entity passenger : List.copyOf(getPassengers())) {
             if (passenger instanceof ServerPlayer sp) {
                 if (sp.isSleeping()) {
+                    BlockPos boatPos = this.blockPosition();
                     // Keep the vanilla sleep-validity pos in sync with the moving boat.
-                    sp.setSleepingPos(this.blockPosition());
+                    sp.setSleepingPos(boatPos);
+                    // Keep the respawn position in sync so it always tracks the boat.
+                    ServerPlayer.RespawnConfig current = sp.getRespawnConfig();
+                    if (current == null || !current.respawnData().pos().equals(boatPos)) {
+                        sp.setRespawnPosition(
+                            new ServerPlayer.RespawnConfig(
+                                LevelData.RespawnData.of(((ServerLevel) level()).dimension(), boatPos, sp.getYRot(), sp.getXRot()),
+                                false
+                            ),
+                            false
+                        );
+                    }
                 } else {
                     passenger.stopRiding();
                 }
@@ -84,6 +104,23 @@ public class BedBoatEntity extends Boat {
             return InteractionResult.SUCCESS;
         }
 
+        if (!(player instanceof ServerPlayer serverPlayer)) {
+            return InteractionResult.FAIL;
+        }
+
+        // Always set spawn on right-click (except in dimensions where beds explode).
+        // Store the UUID so the respawn mixin can find this entity even if it drifts.
+        serverPlayer.setData(com.dev1lroot.mcmods.boats.Boats.BED_BOAT_UUID.get(), Optional.of(this.getUUID()));
+        LOG.info("[BedBoat] Stored UUID {} for player {}", this.getUUID(), serverPlayer.getName().getString());
+        serverPlayer.setRespawnPosition(
+            new ServerPlayer.RespawnConfig(
+                LevelData.RespawnData.of(serverLevel.dimension(), this.blockPosition(), serverPlayer.getYRot(), serverPlayer.getXRot()),
+                false
+            ),
+            true
+        );
+        LOG.info("[BedBoat] setRespawnPosition to {} for player {}", this.blockPosition(), serverPlayer.getName().getString());
+
         if (!bedRule.canSleep(serverLevel)) {
             Component msg = bedRule.asProblem().message();
             player.sendSystemMessage(msg != null ? msg : Component.translatable("block.minecraft.bed.no_sleep"));
@@ -91,10 +128,6 @@ public class BedBoatEntity extends Boat {
         }
 
         if (player.isSleeping()) {
-            return InteractionResult.FAIL;
-        }
-
-        if (!(player instanceof ServerPlayer serverPlayer)) {
             return InteractionResult.FAIL;
         }
 
@@ -111,7 +144,7 @@ public class BedBoatEntity extends Boat {
         if (result.right().isPresent()) {
             // Mount the player so the boat doesn't drift and the sleeping pos stays valid.
             // canAddPassenger allows this because the player is now sleeping.
-            // tick() will keep sleepingPos synced as the boat moves, and dismount on wake-up.
+            // tick() will keep sleepingPos and respawnConfig synced as the boat moves, and dismount on wake-up.
             player.startRiding(this);
         }
 
