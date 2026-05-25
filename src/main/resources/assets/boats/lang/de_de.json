@@ -1,0 +1,66 @@
+{
+  "itemGroup.boats": "Boote",
+
+  "item.boats.oak_crafting_table_boat":      "Eichenholzboot mit Werkbank",
+  "item.boats.oak_ender_chest_boat":         "Eichenholzboot mit Endertruhe",
+  "item.boats.oak_furnace_boat":             "Eichenholzboot mit Ofen",
+  "item.boats.oak_double_chest_boat":        "Eichenholzboot mit Doppeltruhe",
+  "item.boats.oak_bed_boat":                 "Eichenholzboot mit Bett",
+
+  "item.boats.spruce_crafting_table_boat":   "Fichtenholzboot mit Werkbank",
+  "item.boats.spruce_ender_chest_boat":      "Fichtenholzboot mit Endertruhe",
+  "item.boats.spruce_furnace_boat":          "Fichtenholzboot mit Ofen",
+  "item.boats.spruce_double_chest_boat":     "Fichtenholzboot mit Doppeltruhe",
+  "item.boats.spruce_bed_boat":              "Fichtenholzboot mit Bett",
+
+  "item.boats.birch_crafting_table_boat":    "Birkenholzboot mit Werkbank",
+  "item.boats.birch_ender_chest_boat":       "Birkenholzboot mit Endertruhe",
+  "item.boats.birch_furnace_boat":           "Birkenholzboot mit Ofen",
+  "item.boats.birch_double_chest_boat":      "Birkenholzboot mit Doppeltruhe",
+  "item.boats.birch_bed_boat":               "Birkenholzboot mit Bett",
+
+  "item.boats.jungle_crafting_table_boat":   "Tropenholzboot mit Werkbank",
+  "item.boats.jungle_ender_chest_boat":      "Tropenholzboot mit Endertruhe",
+  "item.boats.jungle_furnace_boat":          "Tropenholzboot mit Ofen",
+  "item.boats.jungle_double_chest_boat":     "Tropenholzboot mit Doppeltruhe",
+  "item.boats.jungle_bed_boat":              "Tropenholzboot mit Bett",
+
+  "item.boats.acacia_crafting_table_boat":   "Akazienholzboot mit Werkbank",
+  "item.boats.acacia_ender_chest_boat":      "Akazienholzboot mit Endertruhe",
+  "item.boats.acacia_furnace_boat":          "Akazienholzboot mit Ofen",
+  "item.boats.acacia_double_chest_boat":     "Akazienholzboot mit Doppeltruhe",
+  "item.boats.acacia_bed_boat":              "Akazienholzboot mit Bett",
+
+  "item.boats.dark_oak_crafting_table_boat": "Schwarzeichenholzboot mit Werkbank",
+  "item.boats.dark_oak_ender_chest_boat":    "Schwarzeichenholzboot mit Endertruhe",
+  "item.boats.dark_oak_furnace_boat":        "Schwarzeichenholzboot mit Ofen",
+  "item.boats.dark_oak_double_chest_boat":   "Schwarzeichenholzboot mit Doppeltruhe",
+  "item.boats.dark_oak_bed_boat":            "Schwarzeichenholzboot mit Bett",
+
+  "item.boats.mangrove_crafting_table_boat": "Mangrovenholzboot mit Werkbank",
+  "item.boats.mangrove_ender_chest_boat":    "Mangrovenholzboot mit Endertruhe",
+  "item.boats.mangrove_furnace_boat":        "Mangrovenholzboot mit Ofen",
+  "item.boats.mangrove_double_chest_boat":   "Mangrovenholzboot mit Doppeltruhe",
+  "item.boats.mangrove_bed_boat":            "Mangrovenholzboot mit Bett",
+
+  "item.boats.cherry_crafting_table_boat":   "Kirschholzboot mit Werkbank",
+  "item.boats.cherry_ender_chest_boat":      "Kirschholzboot mit Endertruhe",
+  "item.boats.cherry_furnace_boat":          "Kirschholzboot mit Ofen",
+  "item.boats.cherry_double_chest_boat":     "Kirschholzboot mit Doppeltruhe",
+  "item.boats.cherry_bed_boat":              "Kirschholzboot mit Bett",
+
+  "item.boats.bamboo_crafting_table_boat":   "Bambusfloß mit Werkbank",
+  "item.boats.bamboo_ender_chest_boat":      "Bambusfloß mit Endertruhe",
+  "item.boats.bamboo_furnace_boat":          "Bambusfloß mit Ofen",
+  "item.boats.bamboo_double_chest_boat":     "Bambusfloß mit Doppeltruhe",
+  "item.boats.bamboo_bed_boat":              "Bambusfloß mit Bett",
+
+  "item.boats.pale_oak_crafting_table_boat": "Blasseichenholzboot mit Werkbank",
+  "item.boats.pale_oak_ender_chest_boat":    "Blasseichenholzboot mit Endertruhe",
+  "item.boats.pale_oak_furnace_boat":        "Blasseichenholzboot mit Ofen",
+  "item.boats.pale_oak_double_chest_boat":   "Blasseichenholzboot mit Doppeltruhe",
+  "item.boats.pale_oak_bed_boat":            "Blasseichenholzboot mit Bett",
+
+  "container.boats.furnace_boat":      "Bootsofen",
+  "container.boats.double_chest_boat": "Bootsdoppeltruhe"
+}

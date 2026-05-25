@@ -1,0 +1,66 @@
+{
+  "itemGroup.boats": "船只",
+
+  "item.boats.oak_crafting_table_boat":      "橡木船（含工作台）",
+  "item.boats.oak_ender_chest_boat":         "橡木船（含末影箱）",
+  "item.boats.oak_furnace_boat":             "橡木船（含熔炉）",
+  "item.boats.oak_double_chest_boat":        "橡木船（含双箱子）",
+  "item.boats.oak_bed_boat":                 "橡木船（含床）",
+
+  "item.boats.spruce_crafting_table_boat":   "云杉木船（含工作台）",
+  "item.boats.spruce_ender_chest_boat":      "云杉木船（含末影箱）",
+  "item.boats.spruce_furnace_boat":          "云杉木船（含熔炉）",
+  "item.boats.spruce_double_chest_boat":     "云杉木船（含双箱子）",
+  "item.boats.spruce_bed_boat":              "云杉木船（含床）",
+
+  "item.boats.birch_crafting_table_boat":    "白桦木船（含工作台）",
+  "item.boats.birch_ender_chest_boat":       "白桦木船（含末影箱）",
+  "item.boats.birch_furnace_boat":           "白桦木船（含熔炉）",
+  "item.boats.birch_double_chest_boat":      "白桦木船（含双箱子）",
+  "item.boats.birch_bed_boat":               "白桦木船（含床）",
+
+  "item.boats.jungle_crafting_table_boat":   "丛林木船（含工作台）",
+  "item.boats.jungle_ender_chest_boat":      "丛林木船（含末影箱）",
+  "item.boats.jungle_furnace_boat":          "丛林木船（含熔炉）",
+  "item.boats.jungle_double_chest_boat":     "丛林木船（含双箱子）",
+  "item.boats.jungle_bed_boat":              "丛林木船（含床）",
+
+  "item.boats.acacia_crafting_table_boat":   "金合欢木船（含工作台）",
+  "item.boats.acacia_ender_chest_boat":      "金合欢木船（含末影箱）",
+  "item.boats.acacia_furnace_boat":          "金合欢木船（含熔炉）",
+  "item.boats.acacia_double_chest_boat":     "金合欢木船（含双箱子）",
+  "item.boats.acacia_bed_boat":              "金合欢木船（含床）",
+
+  "item.boats.dark_oak_crafting_table_boat": "深色橡木船（含工作台）",
+  "item.boats.dark_oak_ender_chest_boat":    "深色橡木船（含末影箱）",
+  "item.boats.dark_oak_furnace_boat":        "深色橡木船（含熔炉）",
+  "item.boats.dark_oak_double_chest_boat":   "深色橡木船（含双箱子）",
+  "item.boats.dark_oak_bed_boat":            "深色橡木船（含床）",
+
+  "item.boats.mangrove_crafting_table_boat": "红树木船（含工作台）",
+  "item.boats.mangrove_ender_chest_boat":    "红树木船（含末影箱）",
+  "item.boats.mangrove_furnace_boat":        "红树木船（含熔炉）",
+  "item.boats.mangrove_double_chest_boat":   "红树木船（含双箱子）",
+  "item.boats.mangrove_bed_boat":            "红树木船（含床）",
+
+  "item.boats.cherry_crafting_table_boat":   "樱花木船（含工作台）",
+  "item.boats.cherry_ender_chest_boat":      "樱花木船（含末影箱）",
+  "item.boats.cherry_furnace_boat":          "樱花木船（含熔炉）",
+  "item.boats.cherry_double_chest_boat":     "樱花木船（含双箱子）",
+  "item.boats.cherry_bed_boat":              "樱花木船（含床）",
+
+  "item.boats.bamboo_crafting_table_boat":   "竹筏（含工作台）",
+  "item.boats.bamboo_ender_chest_boat":      "竹筏（含末影箱）",
+  "item.boats.bamboo_furnace_boat":          "竹筏（含熔炉）",
+  "item.boats.bamboo_double_chest_boat":     "竹筏（含双箱子）",
+  "item.boats.bamboo_bed_boat":              "竹筏（含床）",
+
+  "item.boats.pale_oak_crafting_table_boat": "苍白橡木船（含工作台）",
+  "item.boats.pale_oak_ender_chest_boat":    "苍白橡木船（含末影箱）",
+  "item.boats.pale_oak_furnace_boat":        "苍白橡木船（含熔炉）",
+  "item.boats.pale_oak_double_chest_boat":   "苍白橡木船（含双箱子）",
+  "item.boats.pale_oak_bed_boat":            "苍白橡木船（含床）",
+
+  "container.boats.furnace_boat":      "船用熔炉",
+  "container.boats.double_chest_boat": "船用双箱子"
+}

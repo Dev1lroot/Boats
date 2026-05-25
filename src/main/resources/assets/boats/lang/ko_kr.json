@@ -1,0 +1,66 @@
+{
+  "itemGroup.boats": "보트 종류",
+
+  "item.boats.oak_crafting_table_boat":      "참나무 보트 (제작대 포함)",
+  "item.boats.oak_ender_chest_boat":         "참나무 보트 (엔더 상자 포함)",
+  "item.boats.oak_furnace_boat":             "참나무 보트 (화로 포함)",
+  "item.boats.oak_double_chest_boat":        "참나무 보트 (이중 상자 포함)",
+  "item.boats.oak_bed_boat":                 "참나무 보트 (침대 포함)",
+
+  "item.boats.spruce_crafting_table_boat":   "가문비나무 보트 (제작대 포함)",
+  "item.boats.spruce_ender_chest_boat":      "가문비나무 보트 (엔더 상자 포함)",
+  "item.boats.spruce_furnace_boat":          "가문비나무 보트 (화로 포함)",
+  "item.boats.spruce_double_chest_boat":     "가문비나무 보트 (이중 상자 포함)",
+  "item.boats.spruce_bed_boat":              "가문비나무 보트 (침대 포함)",
+
+  "item.boats.birch_crafting_table_boat":    "자작나무 보트 (제작대 포함)",
+  "item.boats.birch_ender_chest_boat":       "자작나무 보트 (엔더 상자 포함)",
+  "item.boats.birch_furnace_boat":           "자작나무 보트 (화로 포함)",
+  "item.boats.birch_double_chest_boat":      "자작나무 보트 (이중 상자 포함)",
+  "item.boats.birch_bed_boat":               "자작나무 보트 (침대 포함)",
+
+  "item.boats.jungle_crafting_table_boat":   "정글나무 보트 (제작대 포함)",
+  "item.boats.jungle_ender_chest_boat":      "정글나무 보트 (엔더 상자 포함)",
+  "item.boats.jungle_furnace_boat":          "정글나무 보트 (화로 포함)",
+  "item.boats.jungle_double_chest_boat":     "정글나무 보트 (이중 상자 포함)",
+  "item.boats.jungle_bed_boat":              "정글나무 보트 (침대 포함)",
+
+  "item.boats.acacia_crafting_table_boat":   "아카시아나무 보트 (제작대 포함)",
+  "item.boats.acacia_ender_chest_boat":      "아카시아나무 보트 (엔더 상자 포함)",
+  "item.boats.acacia_furnace_boat":          "아카시아나무 보트 (화로 포함)",
+  "item.boats.acacia_double_chest_boat":     "아카시아나무 보트 (이중 상자 포함)",
+  "item.boats.acacia_bed_boat":              "아카시아나무 보트 (침대 포함)",
+
+  "item.boats.dark_oak_crafting_table_boat": "짙은 참나무 보트 (제작대 포함)",
+  "item.boats.dark_oak_ender_chest_boat":    "짙은 참나무 보트 (엔더 상자 포함)",
+  "item.boats.dark_oak_furnace_boat":        "짙은 참나무 보트 (화로 포함)",
+  "item.boats.dark_oak_double_chest_boat":   "짙은 참나무 보트 (이중 상자 포함)",
+  "item.boats.dark_oak_bed_boat":            "짙은 참나무 보트 (침대 포함)",
+
+  "item.boats.mangrove_crafting_table_boat": "맹그로브나무 보트 (제작대 포함)",
+  "item.boats.mangrove_ender_chest_boat":    "맹그로브나무 보트 (엔더 상자 포함)",
+  "item.boats.mangrove_furnace_boat":        "맹그로브나무 보트 (화로 포함)",
+  "item.boats.mangrove_double_chest_boat":   "맹그로브나무 보트 (이중 상자 포함)",
+  "item.boats.mangrove_bed_boat":            "맹그로브나무 보트 (침대 포함)",
+
+  "item.boats.cherry_crafting_table_boat":   "벚나무 보트 (제작대 포함)",
+  "item.boats.cherry_ender_chest_boat":      "벚나무 보트 (엔더 상자 포함)",
+  "item.boats.cherry_furnace_boat":          "벚나무 보트 (화로 포함)",
+  "item.boats.cherry_double_chest_boat":     "벚나무 보트 (이중 상자 포함)",
+  "item.boats.cherry_bed_boat":              "벚나무 보트 (침대 포함)",
+
+  "item.boats.bamboo_crafting_table_boat":   "대나무 뗏목 (제작대 포함)",
+  "item.boats.bamboo_ender_chest_boat":      "대나무 뗏목 (엔더 상자 포함)",
+  "item.boats.bamboo_furnace_boat":          "대나무 뗏목 (화로 포함)",
+  "item.boats.bamboo_double_chest_boat":     "대나무 뗏목 (이중 상자 포함)",
+  "item.boats.bamboo_bed_boat":              "대나무 뗏목 (침대 포함)",
+
+  "item.boats.pale_oak_crafting_table_boat": "창백한 참나무 보트 (제작대 포함)",
+  "item.boats.pale_oak_ender_chest_boat":    "창백한 참나무 보트 (엔더 상자 포함)",
+  "item.boats.pale_oak_furnace_boat":        "창백한 참나무 보트 (화로 포함)",
+  "item.boats.pale_oak_double_chest_boat":   "창백한 참나무 보트 (이중 상자 포함)",
+  "item.boats.pale_oak_bed_boat":            "창백한 참나무 보트 (침대 포함)",
+
+  "container.boats.furnace_boat":      "보트 화로",
+  "container.boats.double_chest_boat": "보트 이중 상자"
+}

@@ -1,0 +1,66 @@
+{
+  "itemGroup.boats": "قوارب",
+
+  "item.boats.oak_crafting_table_boat":      "قارب البلوط مع طاولة النجارة",
+  "item.boats.oak_ender_chest_boat":         "قارب البلوط مع صندوق الاندر",
+  "item.boats.oak_furnace_boat":             "قارب البلوط مع فرن",
+  "item.boats.oak_double_chest_boat":        "قارب البلوط مع صندوق مزدوج",
+  "item.boats.oak_bed_boat":                 "قارب البلوط مع سرير",
+
+  "item.boats.spruce_crafting_table_boat":   "قارب التنوب مع طاولة النجارة",
+  "item.boats.spruce_ender_chest_boat":      "قارب التنوب مع صندوق الاندر",
+  "item.boats.spruce_furnace_boat":          "قارب التنوب مع فرن",
+  "item.boats.spruce_double_chest_boat":     "قارب التنوب مع صندوق مزدوج",
+  "item.boats.spruce_bed_boat":              "قارب التنوب مع سرير",
+
+  "item.boats.birch_crafting_table_boat":    "قارب البتولا مع طاولة النجارة",
+  "item.boats.birch_ender_chest_boat":       "قارب البتولا مع صندوق الاندر",
+  "item.boats.birch_furnace_boat":           "قارب البتولا مع فرن",
+  "item.boats.birch_double_chest_boat":      "قارب البتولا مع صندوق مزدوج",
+  "item.boats.birch_bed_boat":               "قارب البتولا مع سرير",
+
+  "item.boats.jungle_crafting_table_boat":   "قارب الأدغال مع طاولة النجارة",
+  "item.boats.jungle_ender_chest_boat":      "قارب الأدغال مع صندوق الاندر",
+  "item.boats.jungle_furnace_boat":          "قارب الأدغال مع فرن",
+  "item.boats.jungle_double_chest_boat":     "قارب الأدغال مع صندوق مزدوج",
+  "item.boats.jungle_bed_boat":              "قارب الأدغال مع سرير",
+
+  "item.boats.acacia_crafting_table_boat":   "قارب السنط مع طاولة النجارة",
+  "item.boats.acacia_ender_chest_boat":      "قارب السنط مع صندوق الاندر",
+  "item.boats.acacia_furnace_boat":          "قارب السنط مع فرن",
+  "item.boats.acacia_double_chest_boat":     "قارب السنط مع صندوق مزدوج",
+  "item.boats.acacia_bed_boat":              "قارب السنط مع سرير",
+
+  "item.boats.dark_oak_crafting_table_boat": "قارب البلوط الداكن مع طاولة النجارة",
+  "item.boats.dark_oak_ender_chest_boat":    "قارب البلوط الداكن مع صندوق الاندر",
+  "item.boats.dark_oak_furnace_boat":        "قارب البلوط الداكن مع فرن",
+  "item.boats.dark_oak_double_chest_boat":   "قارب البلوط الداكن مع صندوق مزدوج",
+  "item.boats.dark_oak_bed_boat":            "قارب البلوط الداكن مع سرير",
+
+  "item.boats.mangrove_crafting_table_boat": "قارب المانغروف مع طاولة النجارة",
+  "item.boats.mangrove_ender_chest_boat":    "قارب المانغروف مع صندوق الاندر",
+  "item.boats.mangrove_furnace_boat":        "قارب المانغروف مع فرن",
+  "item.boats.mangrove_double_chest_boat":   "قارب المانغروف مع صندوق مزدوج",
+  "item.boats.mangrove_bed_boat":            "قارب المانغروف مع سرير",
+
+  "item.boats.cherry_crafting_table_boat":   "قارب الكرز مع طاولة النجارة",
+  "item.boats.cherry_ender_chest_boat":      "قارب الكرز مع صندوق الاندر",
+  "item.boats.cherry_furnace_boat":          "قارب الكرز مع فرن",
+  "item.boats.cherry_double_chest_boat":     "قارب الكرز مع صندوق مزدوج",
+  "item.boats.cherry_bed_boat":              "قارب الكرز مع سرير",
+
+  "item.boats.bamboo_crafting_table_boat":   "طوف الخيزران مع طاولة النجارة",
+  "item.boats.bamboo_ender_chest_boat":      "طوف الخيزران مع صندوق الاندر",
+  "item.boats.bamboo_furnace_boat":          "طوف الخيزران مع فرن",
+  "item.boats.bamboo_double_chest_boat":     "طوف الخيزران مع صندوق مزدوج",
+  "item.boats.bamboo_bed_boat":              "طوف الخيزران مع سرير",
+
+  "item.boats.pale_oak_crafting_table_boat": "قارب البلوط الشاحب مع طاولة النجارة",
+  "item.boats.pale_oak_ender_chest_boat":    "قارب البلوط الشاحب مع صندوق الاندر",
+  "item.boats.pale_oak_furnace_boat":        "قارب البلوط الشاحب مع فرن",
+  "item.boats.pale_oak_double_chest_boat":   "قارب البلوط الشاحب مع صندوق مزدوج",
+  "item.boats.pale_oak_bed_boat":            "قارب البلوط الشاحب مع سرير",
+
+  "container.boats.furnace_boat":      "فرن القارب",
+  "container.boats.double_chest_boat": "صندوق القارب المزدوج"
+}

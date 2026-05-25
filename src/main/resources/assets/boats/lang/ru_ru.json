@@ -1,0 +1,66 @@
+{
+  "itemGroup.boats": "Лодки",
+
+  "item.boats.oak_crafting_table_boat":      "Дубовая лодка с верстаком",
+  "item.boats.oak_ender_chest_boat":         "Дубовая лодка с Эндер-сундуком",
+  "item.boats.oak_furnace_boat":             "Дубовая лодка с печью",
+  "item.boats.oak_double_chest_boat":        "Дубовая лодка с двойным сундуком",
+  "item.boats.oak_bed_boat":                 "Дубовая лодка с кроватью",
+
+  "item.boats.spruce_crafting_table_boat":   "Еловая лодка с верстаком",
+  "item.boats.spruce_ender_chest_boat":      "Еловая лодка с Эндер-сундуком",
+  "item.boats.spruce_furnace_boat":          "Еловая лодка с печью",
+  "item.boats.spruce_double_chest_boat":     "Еловая лодка с двойным сундуком",
+  "item.boats.spruce_bed_boat":              "Еловая лодка с кроватью",
+
+  "item.boats.birch_crafting_table_boat":    "Берёзовая лодка с верстаком",
+  "item.boats.birch_ender_chest_boat":       "Берёзовая лодка с Эндер-сундуком",
+  "item.boats.birch_furnace_boat":           "Берёзовая лодка с печью",
+  "item.boats.birch_double_chest_boat":      "Берёзовая лодка с двойным сундуком",
+  "item.boats.birch_bed_boat":               "Берёзовая лодка с кроватью",
+
+  "item.boats.jungle_crafting_table_boat":   "Лодка из тропического дерева с верстаком",
+  "item.boats.jungle_ender_chest_boat":      "Лодка из тропического дерева с Эндер-сундуком",
+  "item.boats.jungle_furnace_boat":          "Лодка из тропического дерева с печью",
+  "item.boats.jungle_double_chest_boat":     "Лодка из тропического дерева с двойным сундуком",
+  "item.boats.jungle_bed_boat":              "Лодка из тропического дерева с кроватью",
+
+  "item.boats.acacia_crafting_table_boat":   "Акациевая лодка с верстаком",
+  "item.boats.acacia_ender_chest_boat":      "Акациевая лодка с Эндер-сундуком",
+  "item.boats.acacia_furnace_boat":          "Акациевая лодка с печью",
+  "item.boats.acacia_double_chest_boat":     "Акациевая лодка с двойным сундуком",
+  "item.boats.acacia_bed_boat":              "Акациевая лодка с кроватью",
+
+  "item.boats.dark_oak_crafting_table_boat": "Лодка из тёмного дуба с верстаком",
+  "item.boats.dark_oak_ender_chest_boat":    "Лодка из тёмного дуба с Эндер-сундуком",
+  "item.boats.dark_oak_furnace_boat":        "Лодка из тёмного дуба с печью",
+  "item.boats.dark_oak_double_chest_boat":   "Лодка из тёмного дуба с двойным сундуком",
+  "item.boats.dark_oak_bed_boat":            "Лодка из тёмного дуба с кроватью",
+
+  "item.boats.mangrove_crafting_table_boat": "Мангровая лодка с верстаком",
+  "item.boats.mangrove_ender_chest_boat":    "Мангровая лодка с Эндер-сундуком",
+  "item.boats.mangrove_furnace_boat":        "Мангровая лодка с печью",
+  "item.boats.mangrove_double_chest_boat":   "Мангровая лодка с двойным сундуком",
+  "item.boats.mangrove_bed_boat":            "Мангровая лодка с кроватью",
+
+  "item.boats.cherry_crafting_table_boat":   "Вишнёвая лодка с верстаком",
+  "item.boats.cherry_ender_chest_boat":      "Вишнёвая лодка с Эндер-сундуком",
+  "item.boats.cherry_furnace_boat":          "Вишнёвая лодка с печью",
+  "item.boats.cherry_double_chest_boat":     "Вишнёвая лодка с двойным сундуком",
+  "item.boats.cherry_bed_boat":              "Вишнёвая лодка с кроватью",
+
+  "item.boats.bamboo_crafting_table_boat":   "Бамбуковый плот с верстаком",
+  "item.boats.bamboo_ender_chest_boat":      "Бамбуковый плот с Эндер-сундуком",
+  "item.boats.bamboo_furnace_boat":          "Бамбуковый плот с печью",
+  "item.boats.bamboo_double_chest_boat":     "Бамбуковый плот с двойным сундуком",
+  "item.boats.bamboo_bed_boat":              "Бамбуковый плот с кроватью",
+
+  "item.boats.pale_oak_crafting_table_boat": "Лодка из бледного дуба с верстаком",
+  "item.boats.pale_oak_ender_chest_boat":    "Лодка из бледного дуба с Эндер-сундуком",
+  "item.boats.pale_oak_furnace_boat":        "Лодка из бледного дуба с печью",
+  "item.boats.pale_oak_double_chest_boat":   "Лодка из бледного дуба с двойным сундуком",
+  "item.boats.pale_oak_bed_boat":            "Лодка из бледного дуба с кроватью",
+
+  "container.boats.furnace_boat":      "Печь на лодке",
+  "container.boats.double_chest_boat": "Двойной сундук на лодке"
+}

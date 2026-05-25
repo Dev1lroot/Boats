@@ -1,0 +1,66 @@
+{
+  "itemGroup.boats": "Barche",
+
+  "item.boats.oak_crafting_table_boat":      "Barca di quercia con banco da lavoro",
+  "item.boats.oak_ender_chest_boat":         "Barca di quercia con baule di ender",
+  "item.boats.oak_furnace_boat":             "Barca di quercia con fornace",
+  "item.boats.oak_double_chest_boat":        "Barca di quercia con doppio baule",
+  "item.boats.oak_bed_boat":                 "Barca di quercia con letto",
+
+  "item.boats.spruce_crafting_table_boat":   "Barca di abete con banco da lavoro",
+  "item.boats.spruce_ender_chest_boat":      "Barca di abete con baule di ender",
+  "item.boats.spruce_furnace_boat":          "Barca di abete con fornace",
+  "item.boats.spruce_double_chest_boat":     "Barca di abete con doppio baule",
+  "item.boats.spruce_bed_boat":              "Barca di abete con letto",
+
+  "item.boats.birch_crafting_table_boat":    "Barca di betulla con banco da lavoro",
+  "item.boats.birch_ender_chest_boat":       "Barca di betulla con baule di ender",
+  "item.boats.birch_furnace_boat":           "Barca di betulla con fornace",
+  "item.boats.birch_double_chest_boat":      "Barca di betulla con doppio baule",
+  "item.boats.birch_bed_boat":               "Barca di betulla con letto",
+
+  "item.boats.jungle_crafting_table_boat":   "Barca della giungla con banco da lavoro",
+  "item.boats.jungle_ender_chest_boat":      "Barca della giungla con baule di ender",
+  "item.boats.jungle_furnace_boat":          "Barca della giungla con fornace",
+  "item.boats.jungle_double_chest_boat":     "Barca della giungla con doppio baule",
+  "item.boats.jungle_bed_boat":              "Barca della giungla con letto",
+
+  "item.boats.acacia_crafting_table_boat":   "Barca di acacia con banco da lavoro",
+  "item.boats.acacia_ender_chest_boat":      "Barca di acacia con baule di ender",
+  "item.boats.acacia_furnace_boat":          "Barca di acacia con fornace",
+  "item.boats.acacia_double_chest_boat":     "Barca di acacia con doppio baule",
+  "item.boats.acacia_bed_boat":              "Barca di acacia con letto",
+
+  "item.boats.dark_oak_crafting_table_boat": "Barca di quercia scura con banco da lavoro",
+  "item.boats.dark_oak_ender_chest_boat":    "Barca di quercia scura con baule di ender",
+  "item.boats.dark_oak_furnace_boat":        "Barca di quercia scura con fornace",
+  "item.boats.dark_oak_double_chest_boat":   "Barca di quercia scura con doppio baule",
+  "item.boats.dark_oak_bed_boat":            "Barca di quercia scura con letto",
+
+  "item.boats.mangrove_crafting_table_boat": "Barca di mangrovia con banco da lavoro",
+  "item.boats.mangrove_ender_chest_boat":    "Barca di mangrovia con baule di ender",
+  "item.boats.mangrove_furnace_boat":        "Barca di mangrovia con fornace",
+  "item.boats.mangrove_double_chest_boat":   "Barca di mangrovia con doppio baule",
+  "item.boats.mangrove_bed_boat":            "Barca di mangrovia con letto",
+
+  "item.boats.cherry_crafting_table_boat":   "Barca di ciliegio con banco da lavoro",
+  "item.boats.cherry_ender_chest_boat":      "Barca di ciliegio con baule di ender",
+  "item.boats.cherry_furnace_boat":          "Barca di ciliegio con fornace",
+  "item.boats.cherry_double_chest_boat":     "Barca di ciliegio con doppio baule",
+  "item.boats.cherry_bed_boat":              "Barca di ciliegio con letto",
+
+  "item.boats.bamboo_crafting_table_boat":   "Zattera di bambù con banco da lavoro",
+  "item.boats.bamboo_ender_chest_boat":      "Zattera di bambù con baule di ender",
+  "item.boats.bamboo_furnace_boat":          "Zattera di bambù con fornace",
+  "item.boats.bamboo_double_chest_boat":     "Zattera di bambù con doppio baule",
+  "item.boats.bamboo_bed_boat":              "Zattera di bambù con letto",
+
+  "item.boats.pale_oak_crafting_table_boat": "Barca di quercia pallida con banco da lavoro",
+  "item.boats.pale_oak_ender_chest_boat":    "Barca di quercia pallida con baule di ender",
+  "item.boats.pale_oak_furnace_boat":        "Barca di quercia pallida con fornace",
+  "item.boats.pale_oak_double_chest_boat":   "Barca di quercia pallida con doppio baule",
+  "item.boats.pale_oak_bed_boat":            "Barca di quercia pallida con letto",
+
+  "container.boats.furnace_boat":      "Fornace della barca",
+  "container.boats.double_chest_boat": "Doppio baule della barca"
+}

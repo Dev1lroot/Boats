@@ -1,0 +1,66 @@
+{
+  "itemGroup.boats": "Bateaux",
+
+  "item.boats.oak_crafting_table_boat":      "Bateau en chêne avec établi",
+  "item.boats.oak_ender_chest_boat":         "Bateau en chêne avec coffre de l'Ender",
+  "item.boats.oak_furnace_boat":             "Bateau en chêne avec fourneau",
+  "item.boats.oak_double_chest_boat":        "Bateau en chêne avec double coffre",
+  "item.boats.oak_bed_boat":                 "Bateau en chêne avec lit",
+
+  "item.boats.spruce_crafting_table_boat":   "Bateau en sapin avec établi",
+  "item.boats.spruce_ender_chest_boat":      "Bateau en sapin avec coffre de l'Ender",
+  "item.boats.spruce_furnace_boat":          "Bateau en sapin avec fourneau",
+  "item.boats.spruce_double_chest_boat":     "Bateau en sapin avec double coffre",
+  "item.boats.spruce_bed_boat":              "Bateau en sapin avec lit",
+
+  "item.boats.birch_crafting_table_boat":    "Bateau en bouleau avec établi",
+  "item.boats.birch_ender_chest_boat":       "Bateau en bouleau avec coffre de l'Ender",
+  "item.boats.birch_furnace_boat":           "Bateau en bouleau avec fourneau",
+  "item.boats.birch_double_chest_boat":      "Bateau en bouleau avec double coffre",
+  "item.boats.birch_bed_boat":               "Bateau en bouleau avec lit",
+
+  "item.boats.jungle_crafting_table_boat":   "Bateau en acajou avec établi",
+  "item.boats.jungle_ender_chest_boat":      "Bateau en acajou avec coffre de l'Ender",
+  "item.boats.jungle_furnace_boat":          "Bateau en acajou avec fourneau",
+  "item.boats.jungle_double_chest_boat":     "Bateau en acajou avec double coffre",
+  "item.boats.jungle_bed_boat":              "Bateau en acajou avec lit",
+
+  "item.boats.acacia_crafting_table_boat":   "Bateau en acacia avec établi",
+  "item.boats.acacia_ender_chest_boat":      "Bateau en acacia avec coffre de l'Ender",
+  "item.boats.acacia_furnace_boat":          "Bateau en acacia avec fourneau",
+  "item.boats.acacia_double_chest_boat":     "Bateau en acacia avec double coffre",
+  "item.boats.acacia_bed_boat":              "Bateau en acacia avec lit",
+
+  "item.boats.dark_oak_crafting_table_boat": "Bateau en chêne noir avec établi",
+  "item.boats.dark_oak_ender_chest_boat":    "Bateau en chêne noir avec coffre de l'Ender",
+  "item.boats.dark_oak_furnace_boat":        "Bateau en chêne noir avec fourneau",
+  "item.boats.dark_oak_double_chest_boat":   "Bateau en chêne noir avec double coffre",
+  "item.boats.dark_oak_bed_boat":            "Bateau en chêne noir avec lit",
+
+  "item.boats.mangrove_crafting_table_boat": "Bateau en palétuvier avec établi",
+  "item.boats.mangrove_ender_chest_boat":    "Bateau en palétuvier avec coffre de l'Ender",
+  "item.boats.mangrove_furnace_boat":        "Bateau en palétuvier avec fourneau",
+  "item.boats.mangrove_double_chest_boat":   "Bateau en palétuvier avec double coffre",
+  "item.boats.mangrove_bed_boat":            "Bateau en palétuvier avec lit",
+
+  "item.boats.cherry_crafting_table_boat":   "Bateau en cerisier avec établi",
+  "item.boats.cherry_ender_chest_boat":      "Bateau en cerisier avec coffre de l'Ender",
+  "item.boats.cherry_furnace_boat":          "Bateau en cerisier avec fourneau",
+  "item.boats.cherry_double_chest_boat":     "Bateau en cerisier avec double coffre",
+  "item.boats.cherry_bed_boat":              "Bateau en cerisier avec lit",
+
+  "item.boats.bamboo_crafting_table_boat":   "Radeau en bambou avec établi",
+  "item.boats.bamboo_ender_chest_boat":      "Radeau en bambou avec coffre de l'Ender",
+  "item.boats.bamboo_furnace_boat":          "Radeau en bambou avec fourneau",
+  "item.boats.bamboo_double_chest_boat":     "Radeau en bambou avec double coffre",
+  "item.boats.bamboo_bed_boat":              "Radeau en bambou avec lit",
+
+  "item.boats.pale_oak_crafting_table_boat": "Bateau en chêne pâle avec établi",
+  "item.boats.pale_oak_ender_chest_boat":    "Bateau en chêne pâle avec coffre de l'Ender",
+  "item.boats.pale_oak_furnace_boat":        "Bateau en chêne pâle avec fourneau",
+  "item.boats.pale_oak_double_chest_boat":   "Bateau en chêne pâle avec double coffre",
+  "item.boats.pale_oak_bed_boat":            "Bateau en chêne pâle avec lit",
+
+  "container.boats.furnace_boat":      "Fourneau de bateau",
+  "container.boats.double_chest_boat": "Double coffre de bateau"
+}

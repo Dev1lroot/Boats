@@ -1,0 +1,66 @@
+{
+  "itemGroup.boats": "ボート類",
+
+  "item.boats.oak_crafting_table_boat":      "オークのボート（作業台付き）",
+  "item.boats.oak_ender_chest_boat":         "オークのボート（エンダーチェスト付き）",
+  "item.boats.oak_furnace_boat":             "オークのボート（かまど付き）",
+  "item.boats.oak_double_chest_boat":        "オークのボート（ラージチェスト付き）",
+  "item.boats.oak_bed_boat":                 "オークのボート（ベッド付き）",
+
+  "item.boats.spruce_crafting_table_boat":   "トウヒのボート（作業台付き）",
+  "item.boats.spruce_ender_chest_boat":      "トウヒのボート（エンダーチェスト付き）",
+  "item.boats.spruce_furnace_boat":          "トウヒのボート（かまど付き）",
+  "item.boats.spruce_double_chest_boat":     "トウヒのボート（ラージチェスト付き）",
+  "item.boats.spruce_bed_boat":              "トウヒのボート（ベッド付き）",
+
+  "item.boats.birch_crafting_table_boat":    "シラカバのボート（作業台付き）",
+  "item.boats.birch_ender_chest_boat":       "シラカバのボート（エンダーチェスト付き）",
+  "item.boats.birch_furnace_boat":           "シラカバのボート（かまど付き）",
+  "item.boats.birch_double_chest_boat":      "シラカバのボート（ラージチェスト付き）",
+  "item.boats.birch_bed_boat":               "シラカバのボート（ベッド付き）",
+
+  "item.boats.jungle_crafting_table_boat":   "ジャングルのボート（作業台付き）",
+  "item.boats.jungle_ender_chest_boat":      "ジャングルのボート（エンダーチェスト付き）",
+  "item.boats.jungle_furnace_boat":          "ジャングルのボート（かまど付き）",
+  "item.boats.jungle_double_chest_boat":     "ジャングルのボート（ラージチェスト付き）",
+  "item.boats.jungle_bed_boat":              "ジャングルのボート（ベッド付き）",
+
+  "item.boats.acacia_crafting_table_boat":   "アカシアのボート（作業台付き）",
+  "item.boats.acacia_ender_chest_boat":      "アカシアのボート（エンダーチェスト付き）",
+  "item.boats.acacia_furnace_boat":          "アカシアのボート（かまど付き）",
+  "item.boats.acacia_double_chest_boat":     "アカシアのボート（ラージチェスト付き）",
+  "item.boats.acacia_bed_boat":              "アカシアのボート（ベッド付き）",
+
+  "item.boats.dark_oak_crafting_table_boat": "ダークオークのボート（作業台付き）",
+  "item.boats.dark_oak_ender_chest_boat":    "ダークオークのボート（エンダーチェスト付き）",
+  "item.boats.dark_oak_furnace_boat":        "ダークオークのボート（かまど付き）",
+  "item.boats.dark_oak_double_chest_boat":   "ダークオークのボート（ラージチェスト付き）",
+  "item.boats.dark_oak_bed_boat":            "ダークオークのボート（ベッド付き）",
+
+  "item.boats.mangrove_crafting_table_boat": "マングローブのボート（作業台付き）",
+  "item.boats.mangrove_ender_chest_boat":    "マングローブのボート（エンダーチェスト付き）",
+  "item.boats.mangrove_furnace_boat":        "マングローブのボート（かまど付き）",
+  "item.boats.mangrove_double_chest_boat":   "マングローブのボート（ラージチェスト付き）",
+  "item.boats.mangrove_bed_boat":            "マングローブのボート（ベッド付き）",
+
+  "item.boats.cherry_crafting_table_boat":   "サクラのボート（作業台付き）",
+  "item.boats.cherry_ender_chest_boat":      "サクラのボート（エンダーチェスト付き）",
+  "item.boats.cherry_furnace_boat":          "サクラのボート（かまど付き）",
+  "item.boats.cherry_double_chest_boat":     "サクラのボート（ラージチェスト付き）",
+  "item.boats.cherry_bed_boat":              "サクラのボート（ベッド付き）",
+
+  "item.boats.bamboo_crafting_table_boat":   "竹のイカダ（作業台付き）",
+  "item.boats.bamboo_ender_chest_boat":      "竹のイカダ（エンダーチェスト付き）",
+  "item.boats.bamboo_furnace_boat":          "竹のイカダ（かまど付き）",
+  "item.boats.bamboo_double_chest_boat":     "竹のイカダ（ラージチェスト付き）",
+  "item.boats.bamboo_bed_boat":              "竹のイカダ（ベッド付き）",
+
+  "item.boats.pale_oak_crafting_table_boat": "ペールオークのボート（作業台付き）",
+  "item.boats.pale_oak_ender_chest_boat":    "ペールオークのボート（エンダーチェスト付き）",
+  "item.boats.pale_oak_furnace_boat":        "ペールオークのボート（かまど付き）",
+  "item.boats.pale_oak_double_chest_boat":   "ペールオークのボート（ラージチェスト付き）",
+  "item.boats.pale_oak_bed_boat":            "ペールオークのボート（ベッド付き）",
+
+  "container.boats.furnace_boat":      "ボートのかまど",
+  "container.boats.double_chest_boat": "ボートのラージチェスト"
+}

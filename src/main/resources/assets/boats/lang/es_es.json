@@ -1,0 +1,66 @@
+{
+  "itemGroup.boats": "Barcas",
+
+  "item.boats.oak_crafting_table_boat":      "Barca de roble con mesa de trabajo",
+  "item.boats.oak_ender_chest_boat":         "Barca de roble con cofre de ender",
+  "item.boats.oak_furnace_boat":             "Barca de roble con horno",
+  "item.boats.oak_double_chest_boat":        "Barca de roble con doble cofre",
+  "item.boats.oak_bed_boat":                 "Barca de roble con cama",
+
+  "item.boats.spruce_crafting_table_boat":   "Barca de abeto con mesa de trabajo",
+  "item.boats.spruce_ender_chest_boat":      "Barca de abeto con cofre de ender",
+  "item.boats.spruce_furnace_boat":          "Barca de abeto con horno",
+  "item.boats.spruce_double_chest_boat":     "Barca de abeto con doble cofre",
+  "item.boats.spruce_bed_boat":              "Barca de abeto con cama",
+
+  "item.boats.birch_crafting_table_boat":    "Barca de abedul con mesa de trabajo",
+  "item.boats.birch_ender_chest_boat":       "Barca de abedul con cofre de ender",
+  "item.boats.birch_furnace_boat":           "Barca de abedul con horno",
+  "item.boats.birch_double_chest_boat":      "Barca de abedul con doble cofre",
+  "item.boats.birch_bed_boat":               "Barca de abedul con cama",
+
+  "item.boats.jungle_crafting_table_boat":   "Barca de jungla con mesa de trabajo",
+  "item.boats.jungle_ender_chest_boat":      "Barca de jungla con cofre de ender",
+  "item.boats.jungle_furnace_boat":          "Barca de jungla con horno",
+  "item.boats.jungle_double_chest_boat":     "Barca de jungla con doble cofre",
+  "item.boats.jungle_bed_boat":              "Barca de jungla con cama",
+
+  "item.boats.acacia_crafting_table_boat":   "Barca de acacia con mesa de trabajo",
+  "item.boats.acacia_ender_chest_boat":      "Barca de acacia con cofre de ender",
+  "item.boats.acacia_furnace_boat":          "Barca de acacia con horno",
+  "item.boats.acacia_double_chest_boat":     "Barca de acacia con doble cofre",
+  "item.boats.acacia_bed_boat":              "Barca de acacia con cama",
+
+  "item.boats.dark_oak_crafting_table_boat": "Barca de roble oscuro con mesa de trabajo",
+  "item.boats.dark_oak_ender_chest_boat":    "Barca de roble oscuro con cofre de ender",
+  "item.boats.dark_oak_furnace_boat":        "Barca de roble oscuro con horno",
+  "item.boats.dark_oak_double_chest_boat":   "Barca de roble oscuro con doble cofre",
+  "item.boats.dark_oak_bed_boat":            "Barca de roble oscuro con cama",
+
+  "item.boats.mangrove_crafting_table_boat": "Barca de mangle con mesa de trabajo",
+  "item.boats.mangrove_ender_chest_boat":    "Barca de mangle con cofre de ender",
+  "item.boats.mangrove_furnace_boat":        "Barca de mangle con horno",
+  "item.boats.mangrove_double_chest_boat":   "Barca de mangle con doble cofre",
+  "item.boats.mangrove_bed_boat":            "Barca de mangle con cama",
+
+  "item.boats.cherry_crafting_table_boat":   "Barca de cerezo con mesa de trabajo",
+  "item.boats.cherry_ender_chest_boat":      "Barca de cerezo con cofre de ender",
+  "item.boats.cherry_furnace_boat":          "Barca de cerezo con horno",
+  "item.boats.cherry_double_chest_boat":     "Barca de cerezo con doble cofre",
+  "item.boats.cherry_bed_boat":              "Barca de cerezo con cama",
+
+  "item.boats.bamboo_crafting_table_boat":   "Balsa de bambú con mesa de trabajo",
+  "item.boats.bamboo_ender_chest_boat":      "Balsa de bambú con cofre de ender",
+  "item.boats.bamboo_furnace_boat":          "Balsa de bambú con horno",
+  "item.boats.bamboo_double_chest_boat":     "Balsa de bambú con doble cofre",
+  "item.boats.bamboo_bed_boat":              "Balsa de bambú con cama",
+
+  "item.boats.pale_oak_crafting_table_boat": "Barca de roble pálido con mesa de trabajo",
+  "item.boats.pale_oak_ender_chest_boat":    "Barca de roble pálido con cofre de ender",
+  "item.boats.pale_oak_furnace_boat":        "Barca de roble pálido con horno",
+  "item.boats.pale_oak_double_chest_boat":   "Barca de roble pálido con doble cofre",
+  "item.boats.pale_oak_bed_boat":            "Barca de roble pálido con cama",
+
+  "container.boats.furnace_boat":      "Horno de barca",
+  "container.boats.double_chest_boat": "Doble cofre de barca"
+}
