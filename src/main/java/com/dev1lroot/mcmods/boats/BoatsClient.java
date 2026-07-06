@@ -74,9 +74,9 @@ public class BoatsClient {
                     .setValue(ChestBlock.FACING, Direction.EAST)
                     .setValue(ChestBlock.TYPE, ChestType.RIGHT), 0f, 0f, 0.5f));
             registerBoat(event, ModEntities.BED_BOATS.get(wood).get(), layer,
-                new BlockEntry(Blocks.RED_BED.defaultBlockState()
+                new BlockEntry(Blocks.BED.red().defaultBlockState()
                     .setValue(BedBlock.PART, BedPart.HEAD), 0f, 0f, -0.5f),
-                new BlockEntry(Blocks.RED_BED.defaultBlockState()
+                new BlockEntry(Blocks.BED.red().defaultBlockState()
                     .setValue(BedBlock.PART, BedPart.FOOT), 0f, 0f, 0.5f));
         }
     }

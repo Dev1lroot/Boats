@@ -1,7 +1,7 @@
 # Better than Boats
 
-[![Minecraft Version](https://img.shields.io/badge/Minecraft-26.1.2-darkgreen.svg?logo=minecraft)](https://minecraft.net)
-[![NeoForge Version](https://img.shields.io/badge/NeoForge-26.1.2.64--beta-orange.svg)](https://neoforged.net)
+[![Minecraft Version](https://img.shields.io/badge/Minecraft-26.2-darkgreen.svg?logo=minecraft)](https://minecraft.net)
+[![NeoForge Version](https://img.shields.io/badge/NeoForge-26.2.0.6--beta-orange.svg)](https://neoforged.net)
 [![License](https://img.shields.io/badge/License-GNU%20GPL%203.0--Only-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![Mod Version](https://img.shields.io/badge/Version-1.0.1-purple.svg)](https://semver.org/)
 

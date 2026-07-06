@@ -88,7 +88,7 @@ public class FunctionalBoatItem extends Item {
             Vec3 location = hitResult.getLocation();
             boat.setInitialPos(location.x, location.y, location.z);
             if (level instanceof ServerLevel serverLevel) {
-                EntityType.<AbstractBoat>createDefaultStackConfig(serverLevel, itemStack, player).accept(boat);
+                EntityType.<AbstractBoat>createDefaultStackConfig(serverLevel, itemStack, player).apply(boat);
             }
         }
         return boat;

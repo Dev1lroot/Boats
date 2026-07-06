@@ -12,17 +12,16 @@ import net.minecraft.world.inventory.AbstractFurnaceMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.inventory.RecipeBookType;
 import net.minecraft.world.item.crafting.RecipePropertySet;
-import net.minecraft.world.item.crafting.RecipeType;
 
 public class FurnaceBoatMenu extends AbstractFurnaceMenu {
 
     public FurnaceBoatMenu(int containerId, Inventory inventory) {
-        super(ModMenuTypes.FURNACE_BOAT_MENU.get(), RecipeType.SMELTING, RecipePropertySet.FURNACE_INPUT,
+        super(ModMenuTypes.FURNACE_BOAT_MENU.get(), RecipePropertySet.FURNACE_INPUT,
             RecipeBookType.FURNACE, containerId, inventory);
     }
 
     public FurnaceBoatMenu(int containerId, Inventory inventory, Container container, ContainerData data) {
-        super(ModMenuTypes.FURNACE_BOAT_MENU.get(), RecipeType.SMELTING, RecipePropertySet.FURNACE_INPUT,
+        super(ModMenuTypes.FURNACE_BOAT_MENU.get(), RecipePropertySet.FURNACE_INPUT,
             RecipeBookType.FURNACE, containerId, inventory, container, data);
     }
 }
