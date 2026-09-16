@@ -70,7 +70,7 @@ public class FunctionalBoatRenderer extends BoatRenderer {
             poseStack.scale(0.8F, 0.8F, 0.8F);
 
             // Cancel the -90° residual so the block's default facing aligns with the boat bow.
-            poseStack.mulPose(Axis.YP.rotationDegrees(90.0F));
+            poseStack.rotateDegrees(Axis.YP, 90.0F);
 
             // Place the block centred horizontally on the boat hull.
             // Y = -0.1875 aligns the block's bottom with the interior floor of the hull.

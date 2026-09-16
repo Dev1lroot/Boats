@@ -7,6 +7,7 @@ package com.dev1lroot.mcmods.boats.entity;
 
 import com.dev1lroot.mcmods.boats.menu.FurnaceBoatMenu;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -30,7 +31,9 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemStackTemplate;
+import net.minecraft.world.item.component.CookingFuel;
 
+import java.util.Optional;
 import java.util.function.Supplier;
 import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
@@ -38,8 +41,15 @@ import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.FurnaceBlockEntity;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.minecraft.world.level.storage.loot.providers.number.ints.ResolvableInt;
 import net.minecraft.world.phys.Vec3;
 import org.jspecify.annotations.Nullable;
 
@@ -165,7 +175,7 @@ public class FurnaceBoatEntity extends Boat implements Container, MenuProvider, 
                 ItemStack result = recipe.value().assemble(input);
                 if (!result.isEmpty() && canBurn(result)) {
                     if (litTimeRemaining == 0 && hasFuel) {
-                        int newLitTime = fuel.getBurnTime(RecipeType.SMELTING, level.fuelValues());
+                        int newLitTime = getBurnDuration(level, fuel);
                         if (newLitTime > 0) {
                             consumeFuel(fuel);
                             litTimeRemaining = newLitTime;
@@ -195,6 +205,23 @@ public class FurnaceBoatEntity extends Boat implements Container, MenuProvider, 
         if (wasLit != isNowLit) {
             entityData.set(DATA_LIT, isNowLit);
         }
+    }
+
+    private int getBurnDuration(ServerLevel level, ItemStack fuel) {
+        return ResolvableInt.getFromItem(fuel, DataComponents.COOKING_FUEL, CookingFuel::burnTime, getFuelLootContext(level), 0);
+    }
+
+    // Fuel burn times are now resolved via a loot context (so data packs can condition them on the
+    // furnace block, e.g. blast furnace/smoker speedups). This boat always behaves like a plain
+    // furnace, so a throwaway furnace block/block-entity pair stands in for the missing real block.
+    private LootContext getFuelLootContext(ServerLevel level) {
+        LootParams params = new LootParams.Builder(level)
+            .withParameter(LootContextParams.BLOCK_STATE, Blocks.FURNACE.defaultBlockState())
+            .withParameter(LootContextParams.BLOCK_ENTITY, new FurnaceBlockEntity(this.blockPosition(), Blocks.FURNACE.defaultBlockState()))
+            .withParameter(LootContextParams.ORIGIN, this.position())
+            .withParameter(LootContextParams.CONTAINER, this)
+            .create(LootContextParamSets.CONTAINER_PROCESS);
+        return new LootContext.Builder(params).create(Optional.empty());
     }
 
     private boolean canBurn(ItemStack result) {

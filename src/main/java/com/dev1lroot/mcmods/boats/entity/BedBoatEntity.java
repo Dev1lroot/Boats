@@ -5,9 +5,11 @@
 
 package com.dev1lroot.mcmods.boats.entity;
 
+import net.minecraft.advancements.triggers.CriteriaTriggers;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.UUIDUtil;
 import net.minecraft.network.chat.Component;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.server.level.ServerPlayer;
@@ -139,7 +141,7 @@ public class BedBoatEntity extends Boat {
         BedRule bedRule = serverLevel.environmentAttributes()
             .getValue(EnvironmentAttributes.BED_RULE, this.blockPosition());
 
-        if (bedRule.explodes()) {
+        if (bedRule.destroyOnUse()) {
             serverLevel.explode(
                 null,
                 serverLevel.damageSources().badRespawnPointExplosion(this.position()),
@@ -179,23 +181,26 @@ public class BedBoatEntity extends Boat {
             return InteractionResult.FAIL;
         }
 
-        // Attempt sleep — NeoForge's patch to startSleepInBed returns success for non-bed blocks
-        // (blocks without HorizontalDirectionalBlock.FACING property), so water / air at entity pos works
-        var result = serverPlayer.startSleepInBed(this.blockPosition());
+        // Attempt sleep — startSleepInBed now requires a real AbstractBedBlock, which the boat
+        // isn't, so drive the lower-level startSleeping directly. LivingEntityMixin allows this
+        // to succeed at the boat's position even though it isn't a bed block, and we replicate
+        // the bookkeeping startSleepInBed would otherwise have done for us.
+        boolean started = serverPlayer.startSleeping(this.blockPosition());
 
-        result.ifLeft(problem -> {
-            if (problem != null && problem.message() != null) {
-                player.sendSystemMessage(problem.message());
+        if (started) {
+            serverPlayer.awardStat(Stats.SLEEP_IN_BED);
+            CriteriaTriggers.SLEPT_IN_BED.trigger(serverPlayer);
+            if (!serverLevel.canSleepThroughNights()) {
+                serverPlayer.sendOverlayMessage(Component.translatable("sleep.not_possible"));
             }
-        });
+            serverLevel.updateSleepingPlayerList();
 
-        if (result.right().isPresent()) {
             // Mount the player so the boat doesn't drift and the sleeping pos stays valid.
             // canAddPassenger allows this because the player is now sleeping.
             // tick() will keep sleepingPos and respawnConfig synced as the boat moves, and dismount on wake-up.
             player.startRiding(this);
         }
 
-        return result.left().isPresent() ? InteractionResult.FAIL : InteractionResult.SUCCESS;
+        return started ? InteractionResult.SUCCESS : InteractionResult.FAIL;
     }
 }

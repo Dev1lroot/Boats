@@ -6,11 +6,17 @@
 package com.dev1lroot.mcmods.boats.mixin;
 
 import com.dev1lroot.mcmods.boats.entity.BedBoatEntity;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.level.block.BedBlock;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
@@ -34,5 +40,35 @@ public abstract class LivingEntityMixin {
         return entity.getSleepingPos()
             .map(pos -> entity.level().getBlockState(pos).getBlock() instanceof BedBlock)
             .orElse(false);
+    }
+
+    /**
+     * LivingEntity.startSleeping(BlockPos) now hard-requires the block at the target
+     * position to be an AbstractBedBlock, so it always fails at a BedBoatEntity's
+     * position (water/air). When a bed boat occupies that position, replicate the
+     * pre-26.3 unconditional sleep setup instead and cancel the vanilla method.
+     */
+    @Inject(
+        method = "startSleeping",
+        at = @At("HEAD"),
+        cancellable = true
+    )
+    private void boats$startSleepingOnBedBoat(BlockPos bedPosition, CallbackInfoReturnable<Boolean> cir) {
+        LivingEntity self = (LivingEntity) (Object) this;
+        boolean onBedBoat = !self.level().getEntitiesOfClass(BedBoatEntity.class, new AABB(bedPosition).inflate(0.5)).isEmpty();
+        if (!onBedBoat) {
+            return;
+        }
+
+        if (self.isPassenger()) {
+            self.stopRiding();
+        }
+
+        self.setPose(Pose.SLEEPING);
+        self.setPos(bedPosition.getX() + 0.5, bedPosition.getY() + 0.6875, bedPosition.getZ() + 0.5);
+        self.setSleepingPos(bedPosition);
+        self.setDeltaMovement(Vec3.ZERO);
+        self.needsSync = true;
+        cir.setReturnValue(true);
     }
 }
